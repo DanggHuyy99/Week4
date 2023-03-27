@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1300" height="1200" style="border: 4px solid royalblue ;"></canvas>
+    <script>
+        function getRandomHex() {
+            return Math.floor(Math.random() * 255);
+        }
+        function getRandomColor() {
+            var red = getRandomHex();
+            var green = getRandomHex();
+            var blue = getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green + ")";
+        }
+        function createRectangle() {
+            let ctx = document.getElementById('myCanvas').getContext("2d");
+            ctx.beginPath();
+            ctx.lineWidth = "3.5";
+            ctx.strokeStyle = getRandomColor();
+            let a = (Math.random() * window.innerHeight).toFixed(2);
+            let b = (Math.random() * window.innerHeight).toFixed(2);
+            ctx.rect(10, 380, a, b);
+            ctx.stroke();
+            ctx.font = "bold 45px Arial"
+            ctx.strokeText("Chiều dài hình chữ nhật: " + a, 10, 50);
+            ctx.strokeText("Chiều rông hình chữ nhật: " + b, 110, 150);
+            ctx.strokeText("Chu vi hình chữ nhật: " + ((Number(a) + Number(b)) * 2).toFixed(2), 310, 350);
+            ctx.strokeText("Diện tích hình chữ nhật: " + (a * b).toFixed(2), 210, 250);
+        }
+        createRectangle();
+    </script>
+</body>
+
+</html>
