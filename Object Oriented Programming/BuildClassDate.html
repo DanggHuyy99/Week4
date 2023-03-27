@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let MyDate = function (day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+            this.getDay = function () {
+                return this.day;
+            }
+            this.getMonth = function () {
+                return this.month;
+            }
+            this.getYear = function () {
+                return this.year;
+            }
+            this.setDay = function (day) {
+                this.day = day;
+            }
+            this.setMonth = function (month) {
+                this.month = month;
+            }
+            this.setYear = function (year) {
+                this.year = year;
+            this.setDate = function (day, month, year){
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            this.toString1 = function(){
+                if ((this.day) < 10){
+                    this.day = "0" + this.day
+                } else {
+                    if (this.day > 31){
+                        this.day = alert('Invalid day');
+                    }
+                }
+                if ((this.month) < 10){
+                    this.month = "0" + this.month
+                } else {
+                    if ((this.month) > 12){
+                        this.month = alert('Invalid month');
+                    }
+                }
+                document.write((this.day).toString() + "/" + this.month + "/" + this.year);
+            }
+            }
+        };
+        let date = new MyDate(27, 3, 2023);
+        console.log(date);
+        
+        date.setDay(03);
+        date.setMonth(09);
+        date.setYear(1999);
+        date.setDate(4, 4, 1444);
+        let day = date.getDay();
+        let month = date.getMonth();
+        let year = date.getYear();
+        // document.write(day + "/" + month + "/" + year);
+
+        date.toString1();
+    </script>
+</body>
+
+</html>

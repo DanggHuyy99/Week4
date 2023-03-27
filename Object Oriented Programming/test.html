@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="200" height="200" style="border: 2px solid rgb(235, 32, 32); border-style: dashed;">
+
+    </canvas>
+
+    <script>
+        // let huy = document.getElementById('myCanvas');
+        // let huyMove = huy.getContext("2d");
+
+        // // huyMove.moveTo(0,0);
+        // // huyMove.lineTo(200, 200);
+        // // huyMove.stroke();
+
+        // // huyMove.beginPath();
+        // // huyMove.arc(100, 100, 60, 0, 2 * Math.PI);
+        // // huyMove.stroke();
+
+        // // huyMove.font = "20px Arial";
+        // // huyMove.fillText("Nguyễn Đăng huy", 20, 100);
+        // // huyMove.strokeText("Đăng Huy", 50, 50);
+
+        // let huyGradient = huyMove.crcreateLinearGradient(0, 0, 200, 0);
+        // huyGradient.addColorStop(0, "red");
+        // huyGradient.addColorStop(1, "white");
+        // huyMove.fillStyle = huyGradient;
+        // huyMove.fillRect(10, 10, 150, 80);
+
+        let huy = document.getElementById("myCanvas");
+        let huyMove = huy.getContext("2d");
+
+        // Create gradient
+        let huyGradient = huyMove.createRadialGradient(75, 50, 5, 90, 60, 100);
+        huyGradient.addColorStop(0, "red");
+        huyGradient.addColorStop(1, "white");
+
+        // Fill with gradient
+        huyMove.fillStyle = huyGradient;
+        huyMove.fillRect(15, 15, 150, 1000);
+    </script>
+</body>
+
+</html>
