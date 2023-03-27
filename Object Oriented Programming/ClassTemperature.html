@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+</head>
+
+<body>
+    <div>
+        <p>Nhập nhiệt độ C</p>
+        <input type="number" id="Celsius" oninput="changeTemperature()">
+        <p id="result"></p>
+    </div>
+    <script>
+        let Temperature = function (a) {
+            this.getFahrenheit = function () {
+                return 9 / 5 * a + 32;
+            };
+            this.getKelvins = function () {
+                return a + 273.15;
+            };
+        
+        }
+        function changeTemperature() {
+            let number = Number(document.getElementById('Celsius').value);
+            let temperature = new Temperature(number);
+            let my_Fahrenheit = (temperature.getFahrenheit()).toFixed(2);
+            let my_kelvins = (temperature.getKelvins()).toFixed(2);
+            document.getElementById('result').innerHTML = ("Nhiệt độ K: " + my_kelvins + "<sup>o</sup>K" + "<br>" + "Nhiệt độ F: " + my_Fahrenheit + "<sup>o</sup>F")
+        }
+    </script>
+</body>
+
+</html>
